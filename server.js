@@ -1,4 +1,5 @@
 console.log("APP.JS BERJALAN");
+
 // app.js - Frontend untuk MI Salafiyah
 
 // ============ KONFIGURASI ============
@@ -774,6 +775,11 @@ function handleFeedClick(e) {
 
 // ============ INIT ============
 function init() {
+    console.log("INIT DIMULAI");
+    console.log("loginBtn:", loginBtn);
+    console.log("loginSubmitBtn:", loginSubmitBtn);
+    console.log("loginOverlay:", loginOverlay);
+
     const adminUser = users.find(u => u.role === 'admin');
     posts = [{
         id: 'p1',

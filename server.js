@@ -1,3 +1,4 @@
+console.log("APP.JS BERJALAN");
 // app.js - Frontend untuk MI Salafiyah
 
 // ============ KONFIGURASI ============

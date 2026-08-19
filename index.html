@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI Salafiyah · Media Sosial</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- FIXED HEADER -->
+    <header class="fixed-header">
+        <h1><i class="fas fa-share-alt"></i> MI Salafiyah</h1>
+        <div class="header-right">
+            <div class="auth-bar" id="authBar">
+                <div class="user-badge" id="userBadge">
+                    <img id="avatarImg" src="https://ui-avatars.com/api/?name=Tamu&background=3b7cff&color=fff&bold=true" alt="avatar" title="Klik ganti foto profil">
+                    <span id="currentUserDisplay">Tamu</span>
+                    <span class="tag" id="roleTag">pengunjung</span>
+                </div>
+                <div class="auth-actions" id="authActions">
+                    <button id="loginBtn" class="primary"><i class="fas fa-sign-in-alt"></i> Login</button>
+                    <button id="logoutBtn" class="outline hidden"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- POPUP LOGIN -->
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-popup">
+            <button class="close-login" id="closeLogin"><i class="fas fa-times"></i></button>
+            <h2><i class="fas fa-user-circle" style="color:#3b7cff;"></i> Login</h2>
+            <div class="login-field">
+                <label>Username</label>
+                <input type="text" id="loginUsername" placeholder="Masukkan username">
+            </div>
+            <div class="login-field">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="Masukkan password">
+            </div>
+            <button class="login-btn" id="loginSubmitBtn"><i class="fas fa-sign-in-alt"></i> Masuk</button>
+        </div>
+    </div>
+
+    <main class="app">
+        <!-- Profile Settings -->
+        <div id="profileSettings" class="profile-settings hidden">
+            <h4><i class="fas fa-user-cog"></i> Pengaturan Profil</h4>
+            <div class="form-row">
+                <input type="text" id="profileUsername" placeholder="Username baru">
+                <input type="password" id="profilePassword" placeholder="Password baru">
+                <button id="updateProfileBtn"><i class="fas fa-save"></i> Update Profil</button>
+            </div>
+        </div>
+
+        <!-- Admin Panel -->
+        <div id="adminPanel" class="admin-panel hidden">
+            <h3><i class="fas fa-users-cog"></i> Panel Admin · MI Salafiyah</h3>
+            <div id="userList"></div>
+            <div class="add-user-form">
+                <input type="text" id="newUsername" placeholder="Nama user baru">
+                <input type="text" id="newPassword" placeholder="Password" value="123456">
+                <button id="addUserBtn"><i class="fas fa-plus"></i> Tambah User</button>
+            </div>
+
+            <div class="upload-area">
+                <h4><i class="fas fa-cloud-upload-alt"></i> Upload Postingan</h4>
+                <div class="upload-grid">
+                    <input type="text" id="postCaption" placeholder="Caption ...">
+                    <input type="text" id="postLink" placeholder="Link (opsional)">
+                    <input type="file" id="fileInput" accept="image/*,video/*" multiple>
+                    <select id="resolusiSelect">
+                        <option value="asli">Asli</option>
+                        <option value="480p">480p</option>
+                        <option value="720p">720p</option>
+                        <option value="1080p">1080p</option>
+                    </select>
+                    <button id="uploadPostBtn"><i class="fas fa-pen-fancy"></i> Posting</button>
+                </div>
+                <div id="previewContainer" class="preview-box hidden">
+                    <div id="previewMedia"></div>
+                    <div class="preview-caption" id="previewCaption"></div>
+                </div>
+            </div>
+            
+            <!-- Tombol Sync ke Database -->
+            <div style="margin-top: 1.5rem; border-top: 1px solid #e6edf8; padding-top: 1rem;">
+                <button id="syncToDatabaseBtn" style="background: #0b1a33; color: white; border: none; padding: 0.7rem 2rem; border-radius: 40px; font-weight: 600; cursor: pointer; width: 100%;">
+                    <i class="fas fa-database"></i> Sync Data ke Database
+                </button>
+                <button id="loadFromDatabaseBtn" style="background: #3b7cff; color: white; border: none; padding: 0.7rem 2rem; border-radius: 40px; font-weight: 600; cursor: pointer; width: 100%; margin-top: 0.5rem;">
+                    <i class="fas fa-download"></i> Load Data dari Database
+                </button>
+            </div>
+        </div>
+
+        <!-- Feed -->
+        <div id="feedContainer">
+            <div class="feed" id="feed"></div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
